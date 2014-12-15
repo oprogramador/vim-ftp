@@ -12,7 +12,7 @@ Installation:
 
 Configuration:
 
-Write your ftp settings to the vimrc like following:
+Write your ftp settings to the vimrc like the following:
 
 let g:ftp_conf = {
 
@@ -24,7 +24,9 @@ let g:ftp_conf = {
 
 \       'pass' : 'password',
 
-\       'host' : '127.0.0.1'
+\       'host' : '127.0.0.1',
+
+\       'silent' : 0
 
 \   }
 

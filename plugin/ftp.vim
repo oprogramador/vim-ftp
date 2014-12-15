@@ -4,6 +4,7 @@ function Ftp(action)
     let pass = g:ftp_conf['pass']
     let local_base_path = g:ftp_conf['local_base_path']
     let remote_base_path = g:ftp_conf['remote_base_path']
+    let silent = g:ftp_conf['silent']
     redir => fname
     silent execute "echo @%"
     redir END
@@ -13,7 +14,11 @@ function Ftp(action)
     redir END
     let relative = relative[1:]
     let scargs = host.' '.user.' '.pass.' '.local_base_path.' '.remote_base_path.' '.relative[:-2].' '.fname.' '.a:action
-    echo system('vim-ftp-ftp.sh '.scargs)
+    if silent
+        silent execute "echo system('vim-ftp-ftp.sh '.scargs)"
+    else
+        echo system('vim-ftp-ftp.sh '.scargs)
+    endif
 endfunction
 
 function Download()
