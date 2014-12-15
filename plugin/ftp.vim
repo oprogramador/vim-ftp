@@ -18,7 +18,7 @@ function Ftp(action)
     echo 'relative.len='.len(relative) 
     echo 'fname.len='.len(fname) 
     echo 'join='.remote_base_path[:-2].relative[:-2]
-    let scargs = host.' '.user.' '.pass.' '.local_base_path.' '.remote_base_path[:-2].relative[:-2].' '.fname.' '.a:action
+    let scargs = host.' '.user.' '.pass.' '.local_base_path.' '.remote_base_path[:-2].relative.' '.fname.' '.a:action
     echo 'scargs='.scargs
     echo system('vim-ftp-ftp.sh '.scargs)
 endfunction
