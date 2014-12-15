@@ -12,13 +12,7 @@ function Ftp(action)
     silent execute "echo system('vim-ftp-relative_path.sh '.local_base_path.' '.fname)"
     redir END
     let relative = relative[1:]
-    echo 'ftp='.host
-    echo 'fname='.fname
-    echo 'relative='.relative
-    echo 'relative.len='.len(relative) 
-    echo 'fname.len='.len(fname) 
     let scargs = host.' '.user.' '.pass.' '.local_base_path.' '.remote_base_path.' '.relative[:-2].' '.fname.' '.a:action
-    echo 'scargs='.scargs
     echo system('vim-ftp-ftp.sh '.scargs)
 endfunction
 
