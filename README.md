@@ -15,12 +15,19 @@ Configuration:
 Write your ftp settings to the vimrc like following:
 
 let g:vim_sftp_configs = {
+
 \       'local_base_path'  : '/Users/name/sample/',
+
 \       'remote_base_path' : '/var/www/sample/',
+
 \       'user' : 'username',
+
 \       'pass' : 'password',
+
 \       'host' : '127.0.0.1'
+
 \   },
+
 
 Use:
 
