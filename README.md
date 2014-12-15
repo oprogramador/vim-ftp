@@ -33,4 +33,4 @@ Use:
 
 :call Download() - downloading current file
 
-:call Upload() - downloading current file
+:call Upload() - uploading current file

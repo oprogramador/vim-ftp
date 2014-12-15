@@ -1,4 +1,4 @@
-function Download()
+function Ftp(action)
     let host = g:ftp_conf['host']
     let user = g:ftp_conf['user']
     let pass = g:ftp_conf['pass']
@@ -18,7 +18,15 @@ function Download()
     echo 'relative.len='.len(relative) 
     echo 'fname.len='.len(fname) 
     echo 'join='.remote_base_path[:-2].relative[:-2]
-    let scargs = host.' '.user.' '.pass.' '.local_base_path.' '.remote_base_path[:-2].relative[:-2].' '.fname.' get'
+    let scargs = host.' '.user.' '.pass.' '.local_base_path.' '.remote_base_path[:-2].relative[:-2].' '.fname.' '.a:action
     echo 'scargs='.scargs
     echo system('vim-ftp-ftp.sh '.scargs)
+endfunction
+
+function Download()
+    call Ftp('get')
+endfunction
+
+function Upload()
+    call Ftp('put')
 endfunction
