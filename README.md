@@ -14,7 +14,7 @@ Configuration:
 
 Write your ftp settings to the vimrc like following:
 
-let g:vim_sftp_configs = {
+let g:ftp_conf = {
 
 \       'local_base_path'  : '/Users/name/sample/',
 
@@ -26,7 +26,7 @@ let g:vim_sftp_configs = {
 
 \       'host' : '127.0.0.1'
 
-\   },
+\   }
 
 
 Use:
