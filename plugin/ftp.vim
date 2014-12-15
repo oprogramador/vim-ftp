@@ -9,7 +9,7 @@ function Download()
     redir END
     let fname = fname[1:]
     redir => relative
-    silent execute "echo system('relative_path.sh '.local_base_path.' '.fname)"
+    silent execute "echo system('vim-ftp-relative_path.sh '.local_base_path.' '.fname)"
     redir END
     let relative = relative[1:]
     echo 'ftp='.host
@@ -20,5 +20,5 @@ function Download()
     echo 'join='.remote_base_path[:-2].relative[:-2]
     let scargs = host.' '.user.' '.pass.' '.local_base_path.' '.remote_base_path[:-2].relative[:-2].' '.fname.' get'
     echo 'scargs='.scargs
-    echo system('ftp.sh '.scargs)
+    echo system('vim-ftp-ftp.sh '.scargs)
 endfunction
