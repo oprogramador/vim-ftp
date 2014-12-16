@@ -33,6 +33,10 @@ let g:ftp_conf = {
 
 Use:
 
-:call Download() - downloading current file
+:call Download() - download current file
 
-:call Upload() - uploading current file
+:call Upload() - upload current file
+
+:call DownloadAny('file.txt') - download any file
+
+:call UploadAny('file.txt') - upload any file
