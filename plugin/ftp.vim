@@ -44,6 +44,50 @@ function DownloadAny(fname)
     execute "e"
 endfunction
 
+function DownloadAnyWithoutNewTab(fname)
+    call Ftp(a:fname, 'get')
+endfunction
+
 function UploadAny(fname)
     call Ftp(a:fname, 'put')
+endfunction
+
+function ExecuteForAllTabs(f)
+    redir => message
+    silent execute "tabs"
+    redir END
+    let messages = split(message,'\n')
+    for i in messages
+        if i !~ '^Tab'
+            call eval(a:f.'("'.i[4:].'")')
+        endif
+    endfor
+endfunction
+
+function ExecuteForAllBuffers(f)
+    redir => message
+    silent execute "buffers"
+    redir END
+    let messages = split(message,'\n')
+    for i in messages
+            call eval(a:f.'("'.matchstr(i, '".*"')[1:-2].'")')
+    endfor
+endfunction
+
+function DownloadAllTabs()
+    call ExecuteForAllTabs('DownloadAnyWithoutNewTab')
+    execute "tabdo e"
+endfunction
+
+function UploadAllTabs()
+    call ExecuteForAllTabs('UploadAny')
+endfunction
+
+function DownloadAllBuffers()
+    call ExecuteForAllBuffers('DownloadAnyWithoutNewTab')
+    execute "bufdo e"
+endfunction
+
+function UploadAllBuffers()
+    call ExecuteForAllBuffers('UploadAny')
 endfunction
