@@ -16,7 +16,9 @@ Write your ftp settings to the vimrc like the following:
 
 let g:ftp_conf = {
 
-\       'local_base_path'  : '/Users/name/sample/',
+\       'local_base_path'  : '/home/name/sample/',
+
+\       'local_backup_path' : '/home/name/undo/',
 
 \       'remote_base_path' : '/var/www/sample/',
 
@@ -40,3 +42,17 @@ Use:
 :call DownloadAny('file.txt') - download any file
 
 :call UploadAny('file.txt') - upload any file
+
+:call DownloadAllBuffers() - download files in all opened buffers
+
+:call UploadAllBuffers() - upload files in all opened buffers
+
+:call DownloadAllTabs() - download files in all opened tabs
+
+:call UploadAllTabs() - upload files in all opened tabs
+
+Tab - open new file with backup
+
+Close - close current tab with backup
+
+CloseAll - close all opened tabs with backup
