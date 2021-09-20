@@ -3,9 +3,9 @@
 This plugin enables downloading and uploading files via FTP using vim editor.
 
 ## Installation:
-
-- Use [pathogen](https://github.com/tpope/vim-pathogen) or [vundle](https://github.com/VundleVim/Vundle.vim)
-- Run `scripts/startup.sh`
+- Make sure, you have [realpath](https://man7.org/linux/man-pages/man3/realpath.3.html) installed.
+- Use [pathogen](https://github.com/tpope/vim-pathogen) or [vundle](https://github.com/VundleVim/Vundle.vim).
+- Run `scripts/startup.sh`.
 
 ## Configuration
 
